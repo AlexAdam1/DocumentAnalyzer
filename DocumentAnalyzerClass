@@ -1,0 +1,27 @@
+import java.util.Scanner;
+import java.io.*;
+import java.util.ArrayList;
+
+public class DocumentAnalyzer {
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        FileInputStream fis = null;
+        int count;
+        ArrayList<String> wordList = new ArrayList<>();
+        fis = new FileInputStream("D://JavaStuff//IntelliJ IDEA 2024.3.2.2//DocumentAnalyzer//Example.txt");
+        while (sc.hasNext()) {
+            wordList.add(sc.next());
+        }
+        for (int i = 0; i < wordList.size(); i++) {
+            count = 0;
+            System.out.println(wordList.get(i));
+            for (int j = 0; j < wordList.size(); j++) {
+                if (wordList.get(i).equals(wordList.get(j))) {
+                    count++;
+                }
+            }
+            System.out.println(count);
+        }
+fis.close();
+    }
+}
