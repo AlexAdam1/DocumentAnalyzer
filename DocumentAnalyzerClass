@@ -16,8 +16,18 @@ public class DocumentAnalyzer {
         sc = new Scanner(fis);
         while (sc.hasNext()) {
             input = sc.next();
+            for (int i = 0; i < input.length(); i++) {
+                if (Character.isLetter(input.charAt(i))) {
+                    characterArray.add(input.charAt(i) + "");
+                }
+            }
+            input = "";
+            for (int i = 0; i < characterArray.size(); i++) {
+                input = input + characterArray.get(i);
+            }
             System.out.println(input + " ");
             wordList.add(input);
+            characterArray.clear();
         }
         System.out.println(wordList);
         System.out.println("Array finished");
@@ -36,18 +46,3 @@ fis.close();
     }
 }
 
-
-REMOVE SYMBOLS CODE
-for (int i = 0; i < wordList.get(i).length(); i++) {
-            for (int j = 0; j < wordList.get(i).length(); j++) {
-                combo = "";
-                if (Character.isLetter(wordList.get(i).charAt(j))) {
-                characterArray.add(wordList.get(i).charAt(j) + "");
-                }
-            }
-            for (int j = 0; j < characterArray.size(); j++) {
-                combo = combo + characterArray.get(j);
-            }
-            System.out.println(combo);
-            wordList.set(i, combo);
-        }
