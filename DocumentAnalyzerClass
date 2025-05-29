@@ -25,13 +25,10 @@ public class DocumentAnalyzer {
             for (int i = 0; i < characterArray.size(); i++) {
                 input = input + characterArray.get(i);
             }
-            System.out.println(input + " ");
             wordList.add(input);
             characterArray.clear();
         }
-        System.out.println(wordList);
         System.out.println("Array finished");
-        System.out.println(wordList);
         for (int i = 0; i < wordList.size(); i++) {
             count = 0;
             System.out.println(wordList.get(i));
@@ -42,7 +39,7 @@ public class DocumentAnalyzer {
             }
             System.out.println(count);
         }
-fis.close();
+        fis.close();
     }
 }
 
